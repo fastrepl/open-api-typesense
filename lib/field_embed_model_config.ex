@@ -10,10 +10,11 @@ defmodule Typesense.FieldEmbedModelConfig do
           client_id: String.t() | nil,
           client_secret: String.t() | nil,
           model_name: String.t(),
-          project_id: String.t() | nil
+          project_id: String.t() | nil,
+          url: String.t() | nil
         }
 
-  defstruct [:access_token, :api_key, :client_id, :client_secret, :model_name, :project_id]
+  defstruct [:access_token, :api_key, :client_id, :client_secret, :model_name, :project_id, :url]
 
   @doc false
   @spec __fields__(atom) :: keyword
@@ -26,7 +27,8 @@ defmodule Typesense.FieldEmbedModelConfig do
       client_id: {:string, :generic},
       client_secret: {:string, :generic},
       model_name: {:string, :generic},
-      project_id: {:string, :generic}
+      project_id: {:string, :generic},
+      url: {:string, :generic}
     ]
   end
 end

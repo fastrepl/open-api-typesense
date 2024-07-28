@@ -16,7 +16,8 @@ defmodule Typesense.Field do
           optional: boolean | nil,
           reference: String.t() | nil,
           sort: boolean | nil,
-          type: String.t()
+          type: String.t(),
+          stem: boolean | nil
         }
 
   defstruct [
@@ -31,7 +32,8 @@ defmodule Typesense.Field do
     :optional,
     :reference,
     :sort,
-    :type
+    :type,
+    :stem
   ]
 
   @doc false
@@ -51,7 +53,8 @@ defmodule Typesense.Field do
       optional: :boolean,
       reference: {:string, :generic},
       sort: :boolean,
-      type: {:string, :generic}
+      type: {:string, :generic},
+      stem: :boolean
     ]
   end
 end
