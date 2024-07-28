@@ -2,6 +2,7 @@ defmodule Typesense.ApiKey do
   @moduledoc """
   Provides struct and type for a ApiKey
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           actions: [String.t()] | nil,

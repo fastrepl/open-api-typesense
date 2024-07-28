@@ -2,6 +2,7 @@ defmodule Typesense.SearchSynonymSchema do
   @moduledoc """
   Provides struct and type for a SearchSynonymSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{root: String.t() | nil, synonyms: [String.t()]}
 

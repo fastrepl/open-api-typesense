@@ -7,7 +7,8 @@ defmodule OapiTypesense.MixProject do
       version: "0.1.0",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -19,7 +20,14 @@ defmodule OapiTypesense.MixProject do
 
   defp deps do
     [
-      {:oapi_generator, "~> 0.2.0", only: :dev, runtime: false}
+      {:oapi_generator, "~> 0.2.0", only: :dev, runtime: false},
+      {:req, "~> 0.5.0"}
+    ]
+  end
+
+  defp package do
+    [
+      name: "oapi_typesense"
     ]
   end
 end

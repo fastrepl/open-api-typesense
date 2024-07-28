@@ -2,6 +2,7 @@ defmodule Typesense.SearchHighlight do
   @moduledoc """
   Provides struct and type for a SearchHighlight
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           field: String.t() | nil,

@@ -2,6 +2,7 @@ defmodule Typesense.SearchGroupedHit do
   @moduledoc """
   Provides struct and type for a SearchGroupedHit
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           found: integer | nil,

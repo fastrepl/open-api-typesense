@@ -2,6 +2,7 @@ defmodule Typesense.CollectionAliasSchema do
   @moduledoc """
   Provides struct and type for a CollectionAliasSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{collection_name: String.t()}
 

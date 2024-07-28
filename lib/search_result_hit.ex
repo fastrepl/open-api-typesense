@@ -2,6 +2,7 @@ defmodule Typesense.SearchResultHit do
   @moduledoc """
   Provides struct and type for a SearchResultHit
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           document: Typesense.SearchResultHitDocument.t() | nil,

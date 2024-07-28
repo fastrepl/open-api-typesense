@@ -2,6 +2,7 @@ defmodule Typesense.SearchResultRequestParams do
   @moduledoc """
   Provides struct and type for a SearchResultRequestParams
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{collection_name: String.t(), per_page: integer, q: String.t()}
 

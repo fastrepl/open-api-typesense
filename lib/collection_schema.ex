@@ -2,6 +2,7 @@ defmodule Typesense.CollectionSchema do
   @moduledoc """
   Provides struct and type for a CollectionSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           default_sorting_field: String.t() | nil,

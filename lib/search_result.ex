@@ -2,6 +2,7 @@ defmodule Typesense.SearchResult do
   @moduledoc """
   Provides struct and type for a SearchResult
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           facet_counts: [Typesense.FacetCounts.t()] | nil,

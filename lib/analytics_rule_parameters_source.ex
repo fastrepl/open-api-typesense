@@ -2,6 +2,7 @@ defmodule Typesense.AnalyticsRuleParametersSource do
   @moduledoc """
   Provides struct and type for a AnalyticsRuleParametersSource
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{collections: [String.t()] | nil}
 

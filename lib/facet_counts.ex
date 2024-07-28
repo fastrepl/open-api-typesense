@@ -2,6 +2,7 @@ defmodule Typesense.FacetCounts do
   @moduledoc """
   Provides struct and type for a FacetCounts
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           counts: [Typesense.FacetCountsCounts.t()] | nil,

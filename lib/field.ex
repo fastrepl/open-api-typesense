@@ -2,6 +2,7 @@ defmodule Typesense.Field do
   @moduledoc """
   Provides struct and type for a Field
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           drop: boolean | nil,

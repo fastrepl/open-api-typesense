@@ -2,6 +2,7 @@ defmodule Typesense.MultiSearchSearchesParameter do
   @moduledoc """
   Provides struct and type for a MultiSearchSearchesParameter
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{searches: [Typesense.MultiSearchCollectionParameters.t()]}
 

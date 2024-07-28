@@ -2,6 +2,7 @@ defmodule Typesense.MultiSearchResult do
   @moduledoc """
   Provides struct and type for a MultiSearchResult
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{results: [Typesense.SearchResult.t()]}
 

@@ -2,6 +2,7 @@ defmodule Typesense.AnalyticsRulesRetrieveSchema do
   @moduledoc """
   Provides struct and type for a AnalyticsRulesRetrieveSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{rules: [Typesense.AnalyticsRuleSchema.t()] | nil}
 

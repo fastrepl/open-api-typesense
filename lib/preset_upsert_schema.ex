@@ -2,6 +2,7 @@ defmodule Typesense.PresetUpsertSchema do
   @moduledoc """
   Provides struct and type for a PresetUpsertSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           value: Typesense.MultiSearchSearchesParameter.t() | Typesense.SearchParameters.t()

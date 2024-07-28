@@ -2,6 +2,7 @@ defmodule Typesense.SearchOverrideSchema do
   @moduledoc """
   Provides struct and type for a SearchOverrideSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           excludes: [Typesense.SearchOverrideExclude.t()] | nil,

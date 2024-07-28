@@ -2,6 +2,7 @@ defmodule Typesense.PresetSchema do
   @moduledoc """
   Provides struct and type for a PresetSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           name: String.t() | nil,

@@ -2,6 +2,7 @@ defmodule Typesense.SearchOverridesResponse do
   @moduledoc """
   Provides struct and type for a SearchOverridesResponse
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{overrides: [Typesense.SearchOverride.t()]}
 

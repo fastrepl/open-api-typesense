@@ -2,6 +2,7 @@ defmodule Typesense.SearchParameters do
   @moduledoc """
   Provides struct and type for a SearchParameters
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           cache_ttl: integer | nil,

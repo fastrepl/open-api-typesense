@@ -2,6 +2,7 @@ defmodule Typesense.StopwordsSetUpsertSchema do
   @moduledoc """
   Provides struct and type for a StopwordsSetUpsertSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{locale: String.t() | nil, stopwords: [String.t()]}
 

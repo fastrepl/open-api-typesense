@@ -2,6 +2,7 @@ defmodule Typesense.FacetCountsStats do
   @moduledoc """
   Provides struct and type for a FacetCountsStats
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           avg: number | nil,

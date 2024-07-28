@@ -2,6 +2,7 @@ defmodule Typesense.CollectionResponse do
   @moduledoc """
   Provides struct and type for a CollectionResponse
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           created_at: integer | nil,

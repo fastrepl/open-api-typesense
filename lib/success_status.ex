@@ -2,6 +2,7 @@ defmodule Typesense.SuccessStatus do
   @moduledoc """
   Provides struct and type for a SuccessStatus
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{success: boolean}
 

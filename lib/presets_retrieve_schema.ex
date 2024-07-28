@@ -2,6 +2,7 @@ defmodule Typesense.PresetsRetrieveSchema do
   @moduledoc """
   Provides struct and type for a PresetsRetrieveSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{presets: [Typesense.PresetSchema.t()]}
 

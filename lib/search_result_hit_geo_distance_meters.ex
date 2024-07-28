@@ -2,6 +2,7 @@ defmodule Typesense.SearchResultHitGeoDistanceMeters do
   @moduledoc """
   Provides struct and type for a SearchResultHitGeoDistanceMeters
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{}
 

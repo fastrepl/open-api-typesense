@@ -2,6 +2,7 @@ defmodule Typesense.SearchOverrideRule do
   @moduledoc """
   Provides struct and type for a SearchOverrideRule
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{match: String.t(), query: String.t(), tags: [String.t()] | nil}
 

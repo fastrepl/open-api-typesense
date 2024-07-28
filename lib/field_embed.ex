@@ -2,6 +2,7 @@ defmodule Typesense.FieldEmbed do
   @moduledoc """
   Provides struct and type for a FieldEmbed
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{from: [String.t()], model_config: Typesense.FieldEmbedModelConfig.t()}
 

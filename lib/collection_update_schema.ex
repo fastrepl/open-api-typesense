@@ -2,6 +2,7 @@ defmodule Typesense.CollectionUpdateSchema do
   @moduledoc """
   Provides struct and type for a CollectionUpdateSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{fields: [Typesense.Field.t()]}
 

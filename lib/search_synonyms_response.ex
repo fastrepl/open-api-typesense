@@ -2,6 +2,7 @@ defmodule Typesense.SearchSynonymsResponse do
   @moduledoc """
   Provides struct and type for a SearchSynonymsResponse
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{synonyms: [Typesense.SearchSynonym.t()]}
 

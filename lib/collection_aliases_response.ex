@@ -2,6 +2,7 @@ defmodule Typesense.CollectionAliasesResponse do
   @moduledoc """
   Provides struct and type for a CollectionAliasesResponse
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{aliases: [Typesense.CollectionAlias.t()]}
 

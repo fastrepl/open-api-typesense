@@ -2,6 +2,7 @@ defmodule Typesense.StopwordsSetRetrieveSchema do
   @moduledoc """
   Provides struct and type for a StopwordsSetRetrieveSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{stopwords: Typesense.StopwordsSetSchema.t()}
 

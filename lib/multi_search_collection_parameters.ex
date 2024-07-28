@@ -2,6 +2,7 @@ defmodule Typesense.MultiSearchCollectionParameters do
   @moduledoc """
   Provides struct and type for a MultiSearchCollectionParameters
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           cache_ttl: integer | nil,

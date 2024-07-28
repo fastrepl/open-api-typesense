@@ -2,6 +2,7 @@ defmodule Typesense.PresetDeleteSchema do
   @moduledoc """
   Provides struct and type for a PresetDeleteSchema
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{name: String.t()}
 

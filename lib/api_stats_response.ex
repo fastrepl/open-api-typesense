@@ -2,6 +2,7 @@ defmodule Typesense.APIStatsResponse do
   @moduledoc """
   Provides struct and type for a APIStatsResponse
   """
+  use Typesense.Encoder
 
   @type t :: %__MODULE__{
           delete_latency_ms: number | nil,
