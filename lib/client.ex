@@ -2,39 +2,52 @@ defmodule Typesense.Client do
   defp api_key, do: Application.fetch_env!(:oapi_typesense, :api_key)
   defp base_url, do: Application.fetch_env!(:oapi_typesense, :base_url)
 
-  def request(%{
-        url: url,
-        method: method,
-        body: body,
-        response: response_schemas
-      }) do
-    result =
+  def request(%{url: url, method: method} = input) do
+    body_param =
+      if is_map(input[:body]) do
+        [json: input[:body]]
+      else
+        [body: input[:body]]
+      end
+
+    req =
       Req.new(
         base_url: base_url(),
         url: url,
         method: method,
         headers: [{"X-TYPESENSE-API-KEY", api_key()}],
-        json: body
+        params: input[:opts]
       )
-      |> Req.request()
+      |> Req.merge(body_param)
 
-    case result do
-      {:ok, res} -> handle_response(res, response_schemas)
+    case Req.request(req) do
+      {:ok, res} -> decode_response(res, input)
       error -> error
     end
   end
 
-  defp handle_response(%{status: status, body: body} = res, response_schemas) do
+  defp decode_response(%{status: status, body: body} = res, input) do
     flag = if status >= 300, do: :error, else: :ok
 
-    case Enum.find(response_schemas, fn {code, _} -> code == status end) do
-      {_, {module, :t}} -> {flag, to_struct(module, body)}
-      {_, :map} -> {flag, body}
-      _ -> {:error, res}
+    case Enum.find(input[:response], fn {code, _} -> code == status end) do
+      {_, :map} ->
+        {flag, body}
+
+      {_, {:string, :generic}} ->
+        {flag, body}
+
+      {_, {module, type}} when is_atom(type) ->
+        if function_exported?(module, :__struct__, 0) do
+          {flag, to_struct(module, body)}
+        else
+          {flag, body}
+        end
+
+      nil ->
+        {:error, res}
     end
   end
 
-  @spec to_struct(atom() | struct(), any()) :: any()
   def to_struct(kind, attrs) do
     struct = struct(kind)
 
